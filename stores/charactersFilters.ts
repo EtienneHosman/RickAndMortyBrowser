@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useCharactersFiltersStore = defineStore('episodeFilters', {
+export const useCharactersFiltersStore = defineStore('characterFilters', {
   state: () => ({
     search: '',
     page: 1,
