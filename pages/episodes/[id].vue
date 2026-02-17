@@ -1,15 +1,50 @@
 <template>
-    <h1 class="text-3xl font-bold">{{data?.episode.name}}</h1>
-    <h2 class="text-2xl font-bold mb-2">Characters in this episode</h2>
-    <Carousel v-bind="carouselConfig" >
-        <Slide v-for="character in data?.episode.characters" :key="character.id">
-            <CharacterCard :character="character"/>
+  <div>
+    <section
+      v-if="data"
+      class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 text-white p-8 mb-10 shadow-lg"
+    >
+      <div class="max-w-3xl">
+        <p class="text-sm uppercase tracking-widest text-slate-300">
+          Episode {{ data.episode.episode }}
+        </p>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold mt-2">
+          {{ data.episode.name }}
+        </h1>
+
+        <div class="flex flex-wrap gap-4 mt-6">
+          <EpisodeMeta label="Air Date" :value="data.episode.air_date" />
+          <EpisodeMeta label="Characters" :value="data.episode.characters.length.toString()"/>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Characters in this episode
+      </h2>
+
+      <Carousel v-bind="carouselConfig" class="relative">
+        <Slide
+          v-for="character in data?.episode.characters"
+          :key="character.id"
+          class="pb-4"
+        >
+          <CharacterCard
+            :character="character"
+            class="mx-2 hover:scale-[1.02] transition-transform"
+          />
         </Slide>
+
         <template #addons>
-            <Navigation />
+          <Navigation />
         </template>
-  </Carousel>
+      </Carousel>
+    </section>
+  </div>
 </template>
+
 
 <script setup lang="ts">
 import CharacterCard from '~/components/CharacterCard.vue'
