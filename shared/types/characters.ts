@@ -35,6 +35,7 @@ export interface CharacterDetailQueryResult {
     }
     episode: [
       {
+        id: number
         name: string
         episode: string
       }

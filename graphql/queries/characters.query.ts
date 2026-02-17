@@ -1,4 +1,8 @@
+import { CHARACTER_PREVIEW_FRAGMENT } from '../fragments/characterPreviews'
+
 export const GET_ALL_CHARACTERS = gql`
+    ${CHARACTER_PREVIEW_FRAGMENT}
+
     query Characters($name: String, $page: Int){ 
         characters(filter: {name: $name}, page: $page) {
             info {
@@ -8,21 +12,18 @@ export const GET_ALL_CHARACTERS = gql`
                 prev
             }
             results {
-                id
-                name
-                status
-                image
+              ...CharacterPreview
             }
         }
     }
 `
 
 export const GET_CHARACTER_BY_ID = gql`
+  ${CHARACTER_PREVIEW_FRAGMENT}
+
   query GetCharacterById($id: ID!) {
     character(id: $id) {
-      id
-      name
-      status
+      ...CharacterPreview
       species
       type
       gender
@@ -33,6 +34,7 @@ export const GET_CHARACTER_BY_ID = gql`
         name
       }
       episode {
+        id
         name
         episode
       }

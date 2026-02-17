@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { GET_ALL_CHARACTERS } from '~/graphql/characters.query'
+import { GET_ALL_CHARACTERS } from '~/graphql/queries/characters.query'
 import { useCharactersFiltersStore } from '~/stores/charactersFilters'
 
 useHead({

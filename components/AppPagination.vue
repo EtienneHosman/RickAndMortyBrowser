@@ -3,17 +3,35 @@
     <button
       :disabled="page <= 1"
       @click="page--"
-      class="px-3 py-1 border rounded disabled:opacity-50"
+      class="bg-white px-3 py-1 border rounded disabled:opacity-50"
     >
       Prev
     </button>
 
-    <span>Page {{ page }}/{{ pagination.pages }}</span>
+    <span>      
+      <span>Page</span>
+  
+      <!-- Jump-to-page select -->
+      <select
+        v-model="page"
+        class="px-2 py-1 mx-1 border rounded"
+      >
+        <option
+          v-for="p in pagination.pages"
+          :key="p"
+          :value="p"
+        >
+          {{ p }}
+        </option>
+      </select>
+  
+      <span>/ {{ pagination.pages }}</span>
+    </span>
 
     <button
       :disabled="!pagination.next"
       @click="page++"
-      class="px-3 py-1 border rounded disabled:opacity-50"
+      class="bg-white px-3 py-1 border rounded disabled:opacity-50"
     >
       Next
     </button>
