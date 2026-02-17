@@ -1,20 +1,53 @@
 import { defineStore } from 'pinia'
+import { ref, watch, computed } from 'vue'
 
-export const useCharactersFiltersStore = defineStore('characterFilters', {
-  state: () => ({
-    search: '',
-    page: 1,
-  }),
-  actions: {
-    setSearch(value: string) {
-      this.search = value
-      this.page = 1
-    },
-    prevPage() {
-      this.page--
-    },
-    nextPage() {
-      this.page++
-    },
-  },
+export const useCharactersFiltersStore = defineStore('characterFilters', () => {
+  const search = ref('')
+  const status = ref('')
+  const gender = ref('')
+  const page = ref(1)
+
+  // reset page automatically when filters change
+  watch([search, status, gender], () => {
+    page.value = 1
+  })
+
+  const setSearch = (value: string) => {
+    search.value = value
+  }
+
+  const nextPage = () => {
+    page.value++
+  }
+
+  const prevPage = () => {
+    if (page.value > 1) {
+      page.value--
+    }
+  }
+
+  const reset = () => {
+    search.value = ''
+    status.value = ''
+    gender.value = ''
+    page.value = 1
+  }
+
+  const activeFilters = computed(() => [
+    search.value,
+    status.value,
+    gender.value
+  ])
+
+  return {
+    search,
+    status,
+    gender,
+    page,
+    setSearch,
+    nextPage,
+    prevPage,
+    reset,
+    activeFilters
+  }
 })

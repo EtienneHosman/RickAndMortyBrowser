@@ -3,18 +3,30 @@ import { CHARACTER_PREVIEW_FRAGMENT } from '../fragments/characterPreviews'
 export const GET_ALL_CHARACTERS = gql`
     ${CHARACTER_PREVIEW_FRAGMENT}
 
-    query Characters($name: String, $page: Int){ 
-        characters(filter: {name: $name}, page: $page) {
-            info {
-                pages
-                count
-                next
-                prev
-            }
-            results {
-              ...CharacterPreview
-            }
+    query Characters(
+      $name: String
+      $status: String
+      $gender: String
+      $page: Int
+    ) {
+      characters(
+        filter: {
+          name: $name
+          status: $status
+          gender: $gender
         }
+        page: $page
+      ) {
+        info {
+          pages
+          count
+          next
+          prev
+        }
+        results {
+          ...CharacterPreview
+        }
+      }
     }
 `
 

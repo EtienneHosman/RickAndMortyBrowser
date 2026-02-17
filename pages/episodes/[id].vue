@@ -47,7 +47,6 @@
 
 
 <script setup lang="ts">
-import CharacterCard from '~/components/CharacterCard.vue'
 import { GET_EPISODE_BY_ID } from '~/graphql/queries/episodes.query'
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
