@@ -5,4 +5,4 @@ export const CHARACTER_PREVIEW_FRAGMENT = gql`
     status
     image
   }
-`
+`;

@@ -27,19 +27,13 @@ export interface CharacterDetailQueryResult {
     species: string
     type: string
     gender: string
+    image: string
     origin: {
       name: string
     }
     location: {
       name: string
     }
-    episode: [
-      {
-        id: number
-        name: string
-        episode: string
-      }
-    ]
-    image: string
+    episode: EpisodePreview[]
   }
 }

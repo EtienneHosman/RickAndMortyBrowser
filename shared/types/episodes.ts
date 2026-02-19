@@ -1,3 +1,10 @@
+export interface EpisodesQueryResults {
+  episodes: {
+    info: PaginationInfo
+    results: EpisodePreview[]
+  }
+}
+
 export interface EpisodeDetailQueryResult {
     episode: {
         id: number
@@ -6,4 +13,10 @@ export interface EpisodeDetailQueryResult {
         air_date: string
         characters: CharacterPreview[]
     }
+}
+
+export interface EpisodePreview {
+    id: number
+    name: string
+    episode: string
 }
