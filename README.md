@@ -42,3 +42,10 @@ yarn dev
 ```
 
 Visit `http://localhost:3000` to start exploring the multiverse!
+
+
+## Future improvements
+- Add a episode skeleton
+- Automatically generate types based on query if thats possible
+- Formatting of code
+- Error pages for 400 / 500 etc.
