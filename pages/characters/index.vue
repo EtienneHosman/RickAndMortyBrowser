@@ -20,7 +20,8 @@
                         :character="character" />
                 </div>
                 <p v-else>No characters found</p>
-                <AppPagination v-if="data.characters.info.pages" class="justify-end my-4" :pagination="data.characters.info" v-model:page="filters.page" />
+                <AppPagination v-if="data.characters.info.pages" class="justify-end my-4"
+                    :pagination="data.characters.info" v-model:page="filters.page" />
             </template>
         </AsyncState>
     </div>

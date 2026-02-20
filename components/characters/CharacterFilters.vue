@@ -3,7 +3,7 @@
     <!-- Search -->
     <div>
       <label class="block text-sm font-medium mb-1">Name</label>
-      <input v-model="filters.search" type="text" placeholder="Rick, Morty…"
+      <input :value="filters.search" @input="handleSearchInput" type="text" placeholder="Rick, Morty…"
         class="w-full rounded-md border px-3 py-2 text-sm" />
     </div>
 
@@ -36,6 +36,14 @@
 import { useCharactersFiltersStore } from '~/stores/charactersFilters'
 
 const filters = useCharactersFiltersStore()
+
+const updateSearch = (value: string) => {
+  filters.search = value
+}
+
+const handleSearchInput = debounce((e: Event) => {
+  updateSearch((e.target as HTMLInputElement).value)
+}, 500)
 
 const reset = () => {
   filters.reset()
