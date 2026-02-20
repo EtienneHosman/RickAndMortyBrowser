@@ -19,9 +19,6 @@ Built with **Nuxt 3**, **Tailwind CSS**, **Pinia** and **Apollo**, this project 
 Clone the repository and install dependencies:
 
 ```bash
-git clone <your-repo-url>
-cd rick-and-morty-explorer
-
 # Using npm
 npm install
 
