@@ -1,75 +1,47 @@
-# Nuxt Minimal Starter
+# Rick and Morty Explorer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to **Rick and Morty Explorer**, a simple app to browse your favorite characters, episodes, and manage your favorites from the Rick and Morty universe!  
 
-## Setup
+Built with **Nuxt 3**, **Tailwind CSS**, **Pinia** and **Apollo**, this project is perfect for exploring the multiverse of Rick and Morty.  
 
-Make sure to install dependencies:
+---
+
+## Features
+
+- 🌟 **Browse Characters** View all characters from the show with dynamic detail pages.  
+- 📺 **Explore Episodes** See every episode and its details.  
+- ❤️ **Favorites** Save your favorite characters for quick access.  
+
+---
+
+## Quick Start
+
+Clone the repository and install dependencies:
 
 ```bash
-# npm
+git clone <your-repo-url>
+cd rick-and-morty-explorer
+
+# Using npm
 npm install
 
-# pnpm
+# Using pnpm
 pnpm install
 
-# yarn
+# Using yarn
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+Start the development server
 ```bash
-# npm
+# Using npm
 npm run dev
 
-# pnpm
+# Using pnpm
 pnpm dev
 
-# yarn
+# Using yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Visit `http://localhost:3000` to start exploring the multiverse!
