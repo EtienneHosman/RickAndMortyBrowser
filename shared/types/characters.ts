@@ -1,4 +1,3 @@
-// types/episodes.ts
 export interface CharacterPreview {
   id: string
   name: string
@@ -21,7 +20,7 @@ export interface CharactersQueryResult {
 
 export interface CharacterDetailQueryResult {
   character: {
-    id: number
+    id: string
     name: string
     status: CharacterStatus
     species: string
@@ -36,4 +35,8 @@ export interface CharacterDetailQueryResult {
     }
     episode: EpisodePreview[]
   }
+}
+
+export interface CharacterByIdsQueryResult {
+  charactersByIds: CharacterPreview[]
 }

@@ -28,6 +28,9 @@
                 <InfoBadge label="Origin" :value="data.character.origin.name" />
                 <InfoBadge label="Location" :value="data.character.location.name" />
               </div>
+              <BaseButton @click="toggleFavorite" class="max-w-fit">
+                {{ isFavorite ? 'Remove from favorites' : 'Add to favorites' }}
+              </BaseButton>
             </div>
           </div>
         </div>
@@ -56,6 +59,17 @@ import EpisodePreview from '~/components/episodes/EpisodePreview.vue'
 import { GET_CHARACTER_BY_ID } from '~/graphql/queries/characters.query'
 
 const route = useRoute()
+const favorites = useFavoritesStore()
+
+
+const isFavorite = computed(() => {
+  return data.value ? favorites.isFavorite(data.value.character.id) : false
+})
+
+function toggleFavorite() {
+  if (!data.value) return
+  favorites.toggle(data.value.character.id)
+}
 
 const variables = computed(() => ({
   id: route.params.id,

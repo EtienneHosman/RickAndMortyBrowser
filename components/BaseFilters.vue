@@ -6,12 +6,7 @@
 
     <slot />
 
-    <button
-      @click="$emit('reset')"
-      class="w-full rounded-md border px-3 py-2 text-sm font-semibold hover:bg-slate-50"
-    >
-      Reset filters
-    </button>
+    <BaseButton @click="$emit('reset')">Reset filters</BaseButton>
   </div>
 </template>
 

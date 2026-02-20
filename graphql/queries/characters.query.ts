@@ -26,6 +26,16 @@ export const GET_ALL_CHARACTERS = gql`
   }
 `;
 
+export const GET_CHARACTERS_BY_ID = gql`
+  ${CHARACTER_PREVIEW_FRAGMENT}
+
+    query CharactersByIds($ids: [ID!]!) {
+      charactersByIds(ids: $ids) {
+        ...CharacterPreview
+      }
+  }
+`
+
 export const GET_CHARACTER_BY_ID = gql`
   ${CHARACTER_PREVIEW_FRAGMENT}
   ${EPISODE_PREVIEW_FRAGMENT}
