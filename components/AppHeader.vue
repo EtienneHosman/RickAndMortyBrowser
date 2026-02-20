@@ -3,10 +3,10 @@
         <header class="mx-auto container">
             <nav>
                 <ul class="flex gap-8">
-                    <li><NuxtLink to="/" :active-class="activeClasses" :exact-active-class="activeClasses">Home</NuxtLink></li>
-                    <li><NuxtLink to="/characters" :active-class="activeClasses" :exact-active-class="activeClasses">Characters</NuxtLink></li>
-                    <li><NuxtLink to="/episodes" :active-class="activeClasses" :exact-active-class="activeClasses">Episodes</NuxtLink></li>
-                    <li><NuxtLink to="/favorites" :active-class="activeClasses" :exact-active-class="activeClasses">Favorites</NuxtLink></li>
+                    <li><NuxtLink to="/" :activeClass="activeClasses">Home</NuxtLink></li>
+                    <li><NuxtLink to="/characters" :activeClass="activeClasses">Characters</NuxtLink></li>
+                    <li><NuxtLink to="/episodes" :activeClass="activeClasses">Episodes</NuxtLink></li>
+                    <li><NuxtLink to="/favorites" :activeClass="activeClasses">Favorites</NuxtLink></li>
                 </ul>
             </nav>        
         </header>

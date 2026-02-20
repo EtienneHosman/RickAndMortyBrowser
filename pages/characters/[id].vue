@@ -6,6 +6,9 @@
     </NuxtLink>
 
     <AsyncState :pending="pending" :error="error">
+      <template #loading>
+        <CharacterDetailSkeleton/>
+      </template>
       <template #default v-if="data">
         <!-- Character Card -->
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden">

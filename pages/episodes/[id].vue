@@ -1,9 +1,11 @@
 <template>
   <div>
-    <section
-      v-if="data"
-      class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 text-white p-8 mb-10 shadow-lg"
-    >
+    <NuxtLink to="/episodes"
+      class="inline-flex items-center gap-2 font-semibold text-slate-600 hover:text-slate-900 mb-6">
+      Back to episodes
+    </NuxtLink>
+    <section v-if="data"
+      class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 text-white p-8 mb-10 shadow-lg">
       <div class="max-w-3xl">
         <p class="text-sm uppercase tracking-widest text-slate-300">
           Episode {{ data.episode.episode }}
@@ -15,7 +17,7 @@
 
         <div class="flex flex-wrap gap-4 mt-6">
           <EpisodeMeta label="Air Date" :value="data.episode.air_date" />
-          <EpisodeMeta label="Characters" :value="data.episode.characters.length.toString()"/>
+          <EpisodeMeta label="Characters" :value="data.episode.characters.length.toString()" />
         </div>
       </div>
     </section>
@@ -26,15 +28,8 @@
       </h2>
 
       <Carousel v-bind="carouselConfig" class="relative">
-        <Slide
-          v-for="character in data?.episode.characters"
-          :key="character.id"
-          class="pb-4"
-        >
-          <CharacterCard
-            :character="character"
-            class="mx-2 hover:scale-[1.02] transition-transform"
-          />
+        <Slide v-for="character in data?.episode.characters" :key="character.id" class="pb-4">
+          <CharacterCard :character="character" class="mx-2 hover:scale-[1.02] transition-transform" />
         </Slide>
 
         <template #addons>
@@ -57,7 +52,7 @@ const carouselConfig = {
   gap: 8,
   breakpoints: {
     700: {
-        itemsToShow: 6,
+      itemsToShow: 6,
     }
   }
 }
@@ -74,7 +69,7 @@ const { data, pending, error } = useAsyncQuery<EpisodeDetailQueryResult>(
 )
 
 useHead({
-    title: () => data.value?.episode.name
+  title: () => data.value?.episode.name
 })
 </script>
 
