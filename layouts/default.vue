@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-slate-100 min-h-dvh">
+    <div class="bg-slate-100 min-h-screen flex flex-col">
         <AppHeader/>
         <div class="container mx-auto my-8 px-2 text-slate-700">
             <slot/>

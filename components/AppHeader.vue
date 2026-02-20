@@ -1,6 +1,6 @@
 <template>
-    <div class="border-b border-slate-300 py-4">
-        <header class="mx-auto container">
+    <div class="border-b border-slate-300 py-4 bg-white">
+        <header class="px-4 mx-auto container">
             <nav>
                 <ul class="flex gap-8">
                     <li><NuxtLink to="/" :activeClass="activeClasses">Home</NuxtLink></li>
